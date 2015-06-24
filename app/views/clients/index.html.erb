@@ -1,0 +1,49 @@
+<div class="alert-danger text-center" role="alert">
+  <p id="notice"><%= notice %></p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="page-header col-md-4 col-md-offset-4 text-center">
+      <h1><strong>Fichier Clients :</strong></h1>
+
+          <%= form_tag(clients_path, method: :get) do %>
+          <%= text_field_tag (:search) %>
+          <%= submit_tag ("Rechercher"), class: "btn btn-primary btn-sm" %>
+          <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Numero</th>
+      <th>Adresse</th>
+      <th>Codepostal</th>
+      <th>Ville</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.nom %></td>
+        <td><%= client.prenom %></td>
+        <td><%= client.numero %></td>
+        <td><%= client.adresse %></td>
+        <td><%= client.codepostal %></td>
+        <td><%= client.ville %></td>
+        <td><%= link_to 'Afficher', client, class: "btn btn-info btn-sm" %></td>
+        <td><%= link_to 'Modifier', edit_client_path(client), class: "btn btn-warning btn-sm"%></td>
+        <td><%= link_to 'Supprimer', client, method: :delete, data: { confirm: 'Etes vous sur ?' }, class: "btn btn-danger btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>

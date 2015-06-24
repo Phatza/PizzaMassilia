@@ -1,0 +1,46 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <div class="field">
+      <%= f.label :nom %><br>
+      <%= f.text_field :nom, class: "form-control text-center" %>
+    </div>
+    <div class="field">
+      <%= f.label :prenom %><br>
+      <%= f.text_field :prenom, class: "form-control text-center" %>
+    </div>
+    <div class="field">
+      <%= f.label :numero %><br>
+      <%= f.text_field :numero, class: "form-control text-center" %>
+    </div>
+    <div class="field">
+      <%= f.label :adresse %><br>
+      <%= f.text_field :adresse, class: "form-control text-center" %>
+    </div>
+    <div class="field">
+      <%= f.label :codepostal %><br>
+      <%= f.text_field :codepostal, class: "form-control text-center" %>
+    </div>
+    <div class="field">
+      <%= f.label :ville %><br>
+      <%= f.text_field :ville, class: "form-control text-center" %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :note %><br>
+      <%= f.text_area :note, class: "form-control text-center" %>
+    </div>
+    <div class="actions">
+      <%= f.submit ('Soumettre'), class: "btn btn-primary" %>
+    </div>
+
+<% end %>

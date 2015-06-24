@@ -1,0 +1,27 @@
+<div class="alert-success text-center" role="alert">
+  <p id="notice"><%= notice %></p>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <ul class="list-group">
+        <li class="list-group-item active  text-center"><strong class="navbar-left">Nom:</strong><%= @client.nom %></li>
+        <li class="list-group-item text-center"><strong class="navbar-left">Prenom:</strong><%= @client.prenom %></li>
+        <li class="list-group-item text-center"><strong class="navbar-left">Numero:</strong><%= @client.numero %></li>
+        <li class="list-group-item text-center"><strong class="navbar-left">Adresse:</strong><%= @client.adresse %></li>
+        <li class="list-group-item text-center"><strong class="navbar-left">Codepostal:</strong><%= @client.codepostal %></li>
+        <li class="list-group-item text-center"><strong class="navbar-left">Ville:</strong><%= @client.ville %></li>
+        <li class="list-group-item text-center"><strong class="navbar-left">Note:</strong><%= @client.note %></li>
+      </ul>
+
+      <div class="text-center">
+        <%= link_to 'Modifier', edit_client_path(@client), class: "btn btn-warning" %> |
+        <%= link_to 'Retour', clients_path, class: "btn btn-warning" %>
+      </div>
+
+    </div> <!-- col-md-6.end -->
+  </div> <!-- row.end -->
+</div> <!-- container.end -->

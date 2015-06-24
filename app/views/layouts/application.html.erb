@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fichier Client Pizza Massilia</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-static-top">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="http://pizza-massilia.fr/">
+	        <%= image_tag("logo.png") %>
+	      </a>
+	      <ul class="nav navbar-nav">
+	      <li class="active"><%= link_to 'Accueil', clients_path%></li>
+	      <li><%= link_to 'Nouveau client', new_client_path %></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+<%= yield %>
+
+</body>
+</html>
